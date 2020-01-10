@@ -1,0 +1,21 @@
+{
+  "name": "bookshelf",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "postcss-import": "^12.0.1",
+    "shelljs": "^0.8.3",
+    "tailwindcss": "^1.1.4"
+  },
+  "bin": {
+    "bookshelf": "./bin/transform.js"
+  },
+  "scripts": {
+    "start": "./bin/transform.js",
+    "build": "parcel build index.html -d assets/"
+  },
+  "devDependencies": {
+    "cssnano": "^4.1.10"
+  }
+}
