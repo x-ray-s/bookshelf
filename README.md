@@ -28,4 +28,8 @@ yarn start _your_file_
 ```js
 yarn build
 // 复制导出后的 bookmark.html 到 docs/
+// 重命名为 index.html
+// 配置你项目的 github page
 ```
+
+[配置 GitHub Pages 站点的发布源](https://help.github.com/cn/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
