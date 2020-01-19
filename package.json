@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "fs-extra": "^8.1.0",
     "glob": "^7.1.6",
     "parcel-bundler": "^1.12.4",
     "postcss-import": "^12.0.1",
@@ -19,6 +20,7 @@
     "dev": "parcel index.html"
   },
   "devDependencies": {
-    "cssnano": "^4.1.10"
+    "cssnano": "^4.1.10",
+    "stylus": "^0.54.7"
   }
 }

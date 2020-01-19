@@ -1,32 +1,46 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
 html {
   line-height: 1.12;
 }
-a {
-  @apply .text-blue-500;
+
+dir,
+name,
+item {
+  @apply .block;
 }
 
-dl {
-  @apply .m-2;
+item {
+  @apply .text-blue-500 .my-1;
 }
 
-dl > dl {
-  @apply .m-5;
+inline {
+  @apply .inline .cursor-pointer;
 }
 
-dt > a {
-  @apply .my-1 .inline-block;
+dir {
+  @apply .mx-5 .my-0 .p-0;
 }
 
-dl > dl > dt h3 {
-  @apply .text-xl;
+#app > dir > dir {
+  @apply .mb-5;
 }
-dl > dl > dt h3::before {
+
+#app > dir > item {
+  @apply .my-2;
+}
+
+name {
+  @apply .text-xl .my-5;
+}
+
+name::before {
   content: "🗂";
   vertical-align: middle;
 }
+
 .mode {
   position: fixed;
   right: 12px;

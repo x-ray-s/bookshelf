@@ -1,4 +1,4 @@
-const eles = document.querySelectorAll("dt > h3");
+const eles = document.querySelectorAll("name");
 Array.from(eles).map(item => {
   item.addEventListener(
     "click",
@@ -7,7 +7,8 @@ Array.from(eles).map(item => {
         return;
       }
       const target = e.target || e.srcElement;
-      const child = target.parentNode.nextElementSibling;
+      console.log(target);
+      const child = target.nextElementSibling;
       target.remove();
       child.remove();
     },
@@ -15,16 +16,17 @@ Array.from(eles).map(item => {
   );
 });
 
-Array.from(document.querySelectorAll("a")).map(item => {
+Array.from(document.querySelectorAll("inline")).map(item => {
   item.addEventListener(
     "click",
     function(e) {
       const target = e.target || e.srcElement;
       if (!document.body.classList.contains("dark")) {
-        target.setAttribute("target", "_blank");
-        return true;
+        var anchor = document.createElement("a");
+        anchor.setAttribute("target", "_blank");
+        anchor.href = target.href;
+        anchor.click();
       } else {
-        e.preventDefault();
         target.remove();
       }
     },
@@ -41,7 +43,13 @@ document.querySelector(".export").addEventListener(
     shallow.querySelector("link").href = "./index.css";
     shallow.querySelector(".mode").remove();
     Array.from(shallow.querySelectorAll("script")).map(i => i.remove());
-    var blob = new Blob([shallow.innerHTML]);
+    const html = shallow.innerHTML
+      .replace(/<dir>/gi, "<DL><p>")
+      .replace(/<name>(.+)<\/name>/gi, "<DT><H3>$1</H3>")
+      .replace(/<item([^>]+)>(.+)<\/item>/gi, "<DT><A$1>$2</A>")
+      .replace(/<\/dir>/gi, "</DL><p>")
+      .replace(/href=/g, "HREF=");
+    var blob = new Blob([html]);
     aTag.download = "bookmark.html";
     aTag.href = URL.createObjectURL(blob);
     aTag.click();
