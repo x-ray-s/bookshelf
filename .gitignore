@@ -4,3 +4,4 @@ dist
 *.html
 !docs/*.html
 *.map
+.DS_Store
