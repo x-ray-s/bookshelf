@@ -1,4 +1,4 @@
-# Bookshelf
+# Bookshelf
 
 Chrome Bookmarks 书签工具导出指定文件夹分享工具。
 
@@ -33,3 +33,7 @@ yarn build
 ```
 
 [配置 GitHub Pages 站点的发布源](https://help.github.com/cn/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
+
+## 例子
+
+http://blog.x-ray.work/bookshelf/
