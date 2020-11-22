@@ -2,6 +2,7 @@ node_modules
 .cache
 dist
 *.html
+src/*.html
 !docs/*.html
 *.map
 .DS_Store

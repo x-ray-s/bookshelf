@@ -3,7 +3,7 @@ const fs = require("fs");
 const shell = require("shelljs");
 const getFile = require("../lib/getFile");
 
-(async function() {
+(async function () {
   let file = await getFile();
   console.log(file);
   let data = fs.readFileSync(file, "utf8");
@@ -38,6 +38,6 @@ const getFile = require("../lib/getFile");
     </html>
   `;
 
-  fs.writeFileSync("./index.html", template);
+  fs.writeFileSync("./src/index.html", template);
   shell.exec("npm run dev");
 })();
